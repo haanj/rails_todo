@@ -1,0 +1,17 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variables';
+
+body {
+  background-color: $secondary-light;
+}
+
+.jumbotron {
+  background-color: $primary-dark;
+  color: $secondary-light;
+  .btn-primary {
+    margin-top: 3rem;
+    background-color: $secondary-dark;
+    border: none;
+  }
+}
