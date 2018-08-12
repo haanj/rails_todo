@@ -5,3 +5,13 @@
     <%= render list %>
   <% end %>
 </ul>
+
+<%= form_for(@list) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control' %>
+
+  <%= f.submit 'Add List', class: "btn btn-primary" %>
+<% end %>
