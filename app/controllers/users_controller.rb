@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
     # Prevents requests from accessing addition attributes on model
     def user_params
