@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get    '/logout', to: 'sessions#destroy' # temp until nav bar
   delete '/logout', to: 'sessions#destroy'
   resources :users, only: [:new, :create]
-  resources :lists, only: [:index, :create, :destroy]
+  resources :lists, only: [:index, :create, :edit, :destroy, :update]
 end

@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   before_action :logged_in_user, only: :index
+  before_action :set_list, only: [:edit, :update, :destroy]
 
   def create
     @list = List.new(list_params)
@@ -14,13 +15,23 @@ class ListsController < ApplicationController
     @list = List.new()
   end
 
+  def edit
+  end
+
   def destroy
-    @list = current_user.lists.find_by(id: params[:id])
     @list.destroy
     redirect_to lists_url
   end
 
+  def update
+    @list.update(list_params)
+    redirect_to lists_path
+  end
+
   private
+    def set_list
+      @list = List.find(params[:id])
+    end
 
     def list_params
       params.require(:list).permit(:name, :description, :user_id)
